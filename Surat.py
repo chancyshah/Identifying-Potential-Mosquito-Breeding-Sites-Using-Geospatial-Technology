@@ -101,8 +101,6 @@ def Mosquito(month,year,describe):
   Map.addLayer(CityFile, {}, 'Cities')
   Map.to_streamlit(width=600, height=600, responsive=True, scrolling=False)
 
-
-
 #Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
 
 CityFile = geemap.geojson_to_ee("Surat Ward.geojson" , geodesic=False, encoding='utf-8')
@@ -134,4 +132,4 @@ with st.expander("Web App Developer"):
      st.write("M.Sc (Geoinformatics) B.Tech (Civil)")
      st.write("Email: shahchancy28@gmail.com")
      st.write("[Website] (https://sites.google.com/view/chancyshah/home) , [Linkedin](https://www.linkedin.com/in/chancy-shah-671787119/)")  
-                
+           
