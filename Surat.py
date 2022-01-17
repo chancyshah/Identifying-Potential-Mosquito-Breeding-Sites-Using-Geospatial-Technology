@@ -100,8 +100,8 @@ def Mosquito(month,year,describe):
 
   
   
-ee.Authenticate()
-ee.Initialize()
+#ee.Authenticate()
+#ee.Initialize()
 
 #Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
 
