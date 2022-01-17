@@ -17,7 +17,7 @@ import ee
 #from ipyleaflet import GeoJSON
 
 #ee.Authenticate()
-#ee.Initialize()
+ee.Initialize()
 
 def Mosquito(month,year,describe):
   ###Data Collection
