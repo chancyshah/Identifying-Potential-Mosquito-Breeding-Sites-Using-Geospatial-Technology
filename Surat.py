@@ -27,7 +27,6 @@ add_selectbox3 = st.sidebar.select_slider(
 
 Map = geemap.Map(center=[21.1702,72.8311], zoom=11)
 Map.add_geojson(Ward, layer_name= "Ward Boundary")
-Map.add_raster(Drainage, layer_name='abc')
 Map.to_streamlit(width=600, height=600, responsive=True, scrolling=False)
 
 
