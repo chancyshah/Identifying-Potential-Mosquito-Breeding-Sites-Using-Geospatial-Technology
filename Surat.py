@@ -16,6 +16,8 @@ import ee
 #from geemap import geojson_to_ee, ee_to_geojson
 #from ipyleaflet import GeoJSON
 
+ee.Initialize()
+
 
 def Mosquito(month,year,describe):
   ###Data Collection
@@ -99,7 +101,7 @@ def Mosquito(month,year,describe):
   Map.addLayer(CityFile, {}, 'Cities')
   Map.to_streamlit(width=600, height=600, responsive=True, scrolling=False)
 
-#ee.Initialize()
+
 
 #Drainage = ee.Image.loadGeoTIFF('C:/Users/India/Buffer_Drainage.tif')
 
