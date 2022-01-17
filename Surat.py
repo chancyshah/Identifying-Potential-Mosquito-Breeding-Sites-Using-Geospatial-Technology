@@ -99,11 +99,11 @@ def Mosquito(month,year,describe):
   Map.addLayer(CityFile, {}, 'Cities')
   Map.to_streamlit(width=600, height=600, responsive=True, scrolling=False)
 
-ee.Initialize()
+#ee.Initialize()
 
 #Drainage = ee.Image.loadGeoTIFF('C:/Users/India/Buffer_Drainage.tif')
 
-CityFile = geemap.geojson_to_ee("C:/Users/India/Surat_Ward.geojson" , geodesic=False, encoding='utf-8')
+CityFile = geemap.geojson_to_ee("Surat Ward.geojson" , geodesic=False, encoding='utf-8')
 
 st.title('Identifying Potential Mosquito Breeding Sites Using Geospatial Technology')
 
