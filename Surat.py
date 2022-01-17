@@ -7,6 +7,7 @@ Created on Sat Jan 15 12:44:37 2022
 
 import streamlit as st
 import geemap
+import ee
 
 ee.Initialize()
 
