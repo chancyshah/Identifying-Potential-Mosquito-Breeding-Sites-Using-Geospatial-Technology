@@ -8,6 +8,7 @@ Created on Sat Jan 15 12:44:37 2022
 import streamlit as st
 import geemap
 
+ee.Initialize()
 
 #Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
 
