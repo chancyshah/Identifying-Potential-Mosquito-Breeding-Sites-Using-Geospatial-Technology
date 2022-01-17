@@ -11,8 +11,8 @@ import geemap
 
 #Drainage = ee.Image.loadGeoTIFF('C:/Users/India/Buffer_Drainage.tif')
 
-#Ward = "/Surat Ward.geojson" 
-#CityFile = geemap.geojson_to_ee(Ward, geodesic=False, encoding='utf-8')
+Ward = "Surat Ward.geojson" 
+CityFile = geemap.geojson_to_ee(Ward, geodesic=False, encoding='utf-8')
 
 
 st.title('Identifying Potential Mosquito Breeding Sites Using Geospatial Technology')
@@ -26,7 +26,7 @@ add_selectbox3 = st.sidebar.select_slider(
 
 
 Map = geemap.Map(center=[21.1702,72.8311], zoom=11)
-#Map.add_geojson(Ward, layer_name= "Ward Boundary")
+Map.add_geojson(Ward, layer_name= "Ward Boundary")
 #Map.add_raster(Drainage, layer_name='abc')
 Map.to_streamlit(width=600, height=600, responsive=True, scrolling=False)
 
