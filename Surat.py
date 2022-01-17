@@ -10,6 +10,7 @@ import geemap
 import ee
 
 ee.Initialize()
+ee.Authenticate()
 
 #Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
 
