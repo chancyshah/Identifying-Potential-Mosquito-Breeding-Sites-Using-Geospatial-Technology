@@ -103,7 +103,7 @@ def Mosquito(month,year,describe):
 
 
 
-#Drainage = ee.Image.loadGeoTIFF('C:/Users/India/Buffer_Drainage.tif')
+#Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
 
 CityFile = geemap.geojson_to_ee("Surat Ward.geojson" , geodesic=False, encoding='utf-8')
 
