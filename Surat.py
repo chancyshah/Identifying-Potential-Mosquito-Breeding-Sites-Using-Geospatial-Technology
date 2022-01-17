@@ -9,7 +9,7 @@ import streamlit as st
 import geemap
 
 
-Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
+#Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
 
 Ward = "Surat Ward.geojson" 
 CityFile = geemap.geojson_to_ee(Ward, geodesic=False, encoding='utf-8')
