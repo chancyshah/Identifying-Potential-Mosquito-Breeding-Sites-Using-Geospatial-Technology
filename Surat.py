@@ -63,7 +63,8 @@ def Mosquito(month,year,describe):
   Humidity=Humidity_data.select('Qair_f_inst').mosaic().clip(CityFile)
   # print(geemap.image_stats(Humidity, CityFile, scale=30).getInfo(),'Humidity')
   
-  #Drainage = ee.Image.loadGeoTIFF('https://github.com/chancyshah/Identifying-Potential-Mosquito-Breeding-Sites-Using-Geospatial-Technology/blob/7be95bb2b7a2aa0afebafca1a8e8f7cdcc764cc2/Buffer_Drainage.tif')
+  Drainage = ee.Image.loadGeoTIFF('https://github.com/chancyshah/Identifying-Potential-Mosquito-Breeding-Sites-Using-Geospatial-Technology/blob/7be95bb2b7a2aa0afebafca1a8e8f7cdcc764cc2/Buffer_Drainage.tif')
+  Drainage=Drainage.mosaic().clip(CityFile)
 
   ###Map Algebra - Weighted Overlay
   y=completeImage = NDVI.addBands(NDWI).addBands(NDVI).addBands(FAPAR,).addBands(Precipitation).addBands(WindSpeed).addBands(Soil).addBands(Humidity).addBands(LST)
