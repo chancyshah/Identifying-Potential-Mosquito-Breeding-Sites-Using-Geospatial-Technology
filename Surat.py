@@ -16,8 +16,8 @@ import ee
 #from geemap import geojson_to_ee, ee_to_geojson
 #from ipyleaflet import GeoJSON
 
-ee.Authenticate()
-ee.Initialize()
+#ee.Authenticate()
+#ee.Initialize()
 
 
 def Mosquito(month,year,describe):
