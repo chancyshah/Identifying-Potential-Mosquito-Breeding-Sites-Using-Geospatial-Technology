@@ -1,4 +1,3 @@
-streamlit
-streamlit-folium
-geemap
-leafmap
+streamlit==1.4.0
+geemap==0.11.0
+earthengine-api==0.1.293
