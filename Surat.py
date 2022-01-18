@@ -64,10 +64,10 @@ def Mosquito(month,year,describe):
   # print(geemap.image_stats(Humidity, CityFile, scale=30).getInfo(),'Humidity')
   
   Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
-  #Drainage=Drainage.mosaic().clip(CityFile)
+  Drainage=Drainage.mosaic().clip(CityFile)
 
   ###Map Algebra - Weighted Overlay
-  y=completeImage = NDVI.addBands(NDWI).addBands(NDVI).addBands(FAPAR,).addBands(Precipitation).addBands(WindSpeed).addBands(Soil).addBands(Humidity).addBands(LST).addBands(Drainage)
+  y=completeImage = NDVI.addBands(NDWI).addBands(NDVI).addBands(FAPAR,).addBands(Precipitation).addBands(WindSpeed).addBands(Soil).addBands(Humidity).addBands(LST)
   
   # y=overlay = completeImage.expression('(NDWI)+(NDVI)',#+(NDBI)+(FAPAR)',
   # {'NDVI': completeImage.select("NDVI"), 'NDWI': completeImage.select("NDWI"), 'NDBI': completeImage.select("NDBI"), 'FAPAR': completeImage.select("FAPAR")});
