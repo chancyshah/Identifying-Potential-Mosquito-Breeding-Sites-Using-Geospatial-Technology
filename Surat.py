@@ -19,7 +19,38 @@ import ee
 ee.Authenticate()
 ee.Initialize()
 
+#Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
 
+CityFile = geemap.geojson_to_ee("Surat Ward.geojson" , geodesic=False, encoding='utf-8')
+
+st.title('Identifying Potential Mosquito Breeding Sites Using Geospatial Technology')
+
+add_selectbox1 = st.sidebar.selectbox( "Select City",("Surat","Other"))
+
+add_selectbox2 = st.sidebar.selectbox( "Select Year",("2022","2021","2020"))
+
+add_selectbox3 = st.sidebar.select_slider(
+     'Select Month', options=['January','February', 'March', 'April' ,'May' ,'June','July' ,'August' ,'September' ,'October','November' ,'December' ])
+
+if st.button("Dispaly Potential Mosquito Breeding Sites"):
+    Mosquito(1,2022,'Month')
+    
+with st.expander("About Web App"):
+     st.write("""The disordered urban growth that may favour the emergence of the mosquito in cities is a problem of increasing 
+              magnitude in tropical part of the world. 
+              Vector-Borne Diseases spreads rapidly, a major difficulty in controlling the proliferation of this diseases is associated with 
+              identification of the breeding sites. This problem can be solved using Geospatial Technology""")
+              
+with st.expander("Web App Developer"):
+     st.write("***Pranav Pandya***")
+     st.write("M.Tech (Geoinformatics) B.Tech (Civil)")
+     st.write("Email: pranav.pandya@flame.edu.in")
+     st.write("[Linkedin] (https://www.linkedin.com/in/pranavspandya/)")
+     st.write("***Chancy Shah***")
+     st.write("M.Sc (Geoinformatics) B.Tech (Civil)")
+     st.write("Email: shahchancy28@gmail.com")
+     st.write("[Website] (https://sites.google.com/view/chancyshah/home) , [Linkedin](https://www.linkedin.com/in/chancy-shah-671787119/)")  
+           
 def Mosquito(month,year,describe):
   ###Data Collection
   year=2020
@@ -101,40 +132,3 @@ def Mosquito(month,year,describe):
   Map.addLayer(y,{'palette': ['red', 'black']},'Potential Site') 
   Map.addLayer(CityFile, {}, 'Cities')
   Map.to_streamlit(width=600, height=600, responsive=True, scrolling=False)
-
-  
-  
-
-
-#Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
-
-CityFile = geemap.geojson_to_ee("Surat Ward.geojson" , geodesic=False, encoding='utf-8')
-
-st.title('Identifying Potential Mosquito Breeding Sites Using Geospatial Technology')
-
-add_selectbox1 = st.sidebar.selectbox( "Select City",("Surat","Other"))
-
-add_selectbox2 = st.sidebar.selectbox( "Select Year",("2022","2021","2020"))
-
-add_selectbox3 = st.sidebar.select_slider(
-     'Select Month', options=['January','February', 'March', 'April' ,'May' ,'June','July' ,'August' ,'September' ,'October','November' ,'December' ])
-
-if st.button("Dispaly Potential Mosquito Breeding Sites"):
-    Mosquito(1,2022,'Month')
-    
-with st.expander("About Web App"):
-     st.write("""The disordered urban growth that may favour the emergence of the mosquito in cities is a problem of increasing 
-              magnitude in tropical part of the world. 
-              Vector-Borne Diseases spreads rapidly, a major difficulty in controlling the proliferation of this diseases is associated with 
-              identification of the breeding sites. This problem can be solved using Geospatial Technology""")
-              
-with st.expander("Web App Developer"):
-     st.write("***Pranav Pandya***")
-     st.write("M.Tech (Geoinformatics) B.Tech (Civil)")
-     st.write("Email: pranav.pandya@flame.edu.in")
-     st.write("[Linkedin] (https://www.linkedin.com/in/pranavspandya/)")
-     st.write("***Chancy Shah***")
-     st.write("M.Sc (Geoinformatics) B.Tech (Civil)")
-     st.write("Email: shahchancy28@gmail.com")
-     st.write("[Website] (https://sites.google.com/view/chancyshah/home) , [Linkedin](https://www.linkedin.com/in/chancy-shah-671787119/)")  
-           
