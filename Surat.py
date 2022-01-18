@@ -16,6 +16,10 @@ import ee
 #from geemap import geojson_to_ee, ee_to_geojson
 #from ipyleaflet import GeoJSON
 
+#ee.Authenticate()
+ee.Initialize()
+
+
 def Mosquito(month,year,describe):
   ###Data Collection
   year=2020
@@ -100,8 +104,7 @@ def Mosquito(month,year,describe):
 
   
   
-#ee.Authenticate()
-#ee.Initialize()
+
 
 #Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
 
