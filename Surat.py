@@ -9,7 +9,6 @@ import streamlit as st
 import geemap
 import ee
 
-#ee.Initialize()
 
 def Mosquito(month,year,describe):
   ###Data Collection
@@ -63,6 +62,8 @@ def Mosquito(month,year,describe):
   Humidity_data=ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H").filterBounds(CityFile).filter(ee.Filter.calendarRange (year,year, 'year')).filter(ee.Filter.calendarRange (month,month+3, 'month'));
   Humidity=Humidity_data.select('Qair_f_inst').mosaic().clip(CityFile)
   # print(geemap.image_stats(Humidity, CityFile, scale=30).getInfo(),'Humidity')
+  
+  #Drainage = ee.Image.loadGeoTIFF('https://github.com/chancyshah/Identifying-Potential-Mosquito-Breeding-Sites-Using-Geospatial-Technology/blob/7be95bb2b7a2aa0afebafca1a8e8f7cdcc764cc2/Buffer_Drainage.tif')
 
   ###Map Algebra - Weighted Overlay
   y=completeImage = NDVI.addBands(NDWI).addBands(NDVI).addBands(FAPAR,).addBands(Precipitation).addBands(WindSpeed).addBands(Soil).addBands(Humidity).addBands(LST)
@@ -95,7 +96,6 @@ def Mosquito(month,year,describe):
   Map.addLayer(CityFile, {'color': 'black', 'fillColor': '00000000'}, 'Ward Boundary', opacity = 0.4)
   Map.to_streamlit(width=600, height=600, responsive=True, scrolling=False)
        
-#Drainage = ee.Image.loadGeoTIFF('https://github.com/chancyshah/Identifying-Potential-Mosquito-Breeding-Sites-Using-Geospatial-Technology/blob/7be95bb2b7a2aa0afebafca1a8e8f7cdcc764cc2/Buffer_Drainage.tif')
 
 Month = ['January','February', 'March', 'April' ,'May' ,'June','July' ,'August' ,'September' ,'October','November' ,'December' ]
 
