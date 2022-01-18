@@ -9,7 +9,7 @@ import streamlit as st
 import geemap
 import ee
 
-ee.Initialize()
+#ee.Initialize()
 
 #Drainage = ee.Image.loadGeoTIFF('https://github.com/chancyshah/Identifying-Potential-Mosquito-Breeding-Sites-Using-Geospatial-Technology/blob/7be95bb2b7a2aa0afebafca1a8e8f7cdcc764cc2/Buffer_Drainage.tif')
 
