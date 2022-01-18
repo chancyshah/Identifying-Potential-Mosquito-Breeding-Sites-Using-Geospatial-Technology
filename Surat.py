@@ -67,7 +67,7 @@ def Mosquito(month,year,describe):
   Drainage=Drainage.mosaic().clip(CityFile)
 
   ###Map Algebra - Weighted Overlay
-  y=completeImage = NDVI.addBands(NDWI).addBands(NDVI).addBands(FAPAR,).addBands(Precipitation).addBands(WindSpeed).addBands(Soil).addBands(Humidity).addBands(LST)
+  y=completeImage = NDVI.addBands(NDWI).addBands(NDVI).addBands(FAPAR,).addBands(Precipitation).addBands(WindSpeed).addBands(Soil).addBands(Humidity).addBands(LST).add(Drainage)
   
   # y=overlay = completeImage.expression('(NDWI)+(NDVI)',#+(NDBI)+(FAPAR)',
   # {'NDVI': completeImage.select("NDVI"), 'NDWI': completeImage.select("NDWI"), 'NDBI': completeImage.select("NDBI"), 'FAPAR': completeImage.select("FAPAR")});
