@@ -13,11 +13,8 @@ import ee
 #import sys
 #import geopandas as gpd
 #import pandas as pd
-#from geemap import geojson_to_ee, ee_to_geojson
+from geemap import geojson_to_ee, ee_to_geojson
 #from ipyleaflet import GeoJSON
-
-ee.Authenticate()
-ee.Initialize()
 
 #Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
 
