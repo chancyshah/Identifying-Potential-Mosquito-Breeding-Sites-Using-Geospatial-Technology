@@ -16,7 +16,6 @@ import ee
 #from geemap import geojson_to_ee, ee_to_geojson
 #from ipyleaflet import GeoJSON
 
-credentials = data.get_persistent_credentials()
 ee.Authenticate()
 ee.Initialize()
 
