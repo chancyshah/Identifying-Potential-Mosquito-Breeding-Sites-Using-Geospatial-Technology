@@ -15,7 +15,7 @@ def Mosquito(month,year,describe):
   ###Data Collection
   year=2020
   
-  CityFile = geemap.geojson_to_ee("https://github.com/chancyshah/Identifying-Potential-Mosquito-Breeding-Sites-Using-Geospatial-Technology/blob/7be95bb2b7a2aa0afebafca1a8e8f7cdcc764cc2/Surat%20Ward.geojson" , geodesic=False, encoding='utf-8')
+  CityFile = geemap.geojson_to_ee("Surat Ward.geojson" , geodesic=False, encoding='utf-8')
   
   dataset = ee.ImageCollection("LANDSAT/LE07/C01/T1_32DAY_NDVI").filterBounds(CityFile).filter(ee.Filter.calendarRange (year,year, 'year')).filter(ee.Filter.calendarRange (month,month+1, 'month'));
   NDVI = dataset.mosaic().clip(CityFile);
