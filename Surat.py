@@ -18,7 +18,7 @@ from geemap import geojson_to_ee, ee_to_geojson
 
 #Drainage = ee.Image.loadGeoTIFF('Buffer_Drainage.tif')
 
-CityFile = geemap.geojson_to_ee("Surat Ward.geojson" , geodesic=False, encoding='utf-8')
+#CityFile = geemap.geojson_to_ee("Surat Ward.geojson" , geodesic=False, encoding='utf-8')
 
 st.title('Identifying Potential Mosquito Breeding Sites Using Geospatial Technology')
 
